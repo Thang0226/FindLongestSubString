@@ -7,8 +7,11 @@ public class LongestSubString {
 		System.out.println("Enter a string: ");
 		String str = input.nextLine();
 
+		long start = System.currentTimeMillis();
 		String longestString = findSubString(str);
+		long end = System.currentTimeMillis();
 		System.out.println(longestString);
+		System.out.println("Finding time: " + (end - start));
 	}
 
 	private static String findSubString(String str) {
