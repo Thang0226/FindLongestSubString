@@ -7,11 +7,11 @@ public class LongestSubString {
 		System.out.println("Enter a string: ");
 		String str = input.nextLine();
 
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
 		String longestString = findSubString(str);
-		long end = System.currentTimeMillis();
+		long end = System.nanoTime();
 		System.out.println(longestString);
-		System.out.println("Finding time: " + (end - start));
+		System.out.println("Finding time: " + ((end - start) / 1000) + " micro-seconds");
 	}
 
 	private static String findSubString(String str) {
@@ -35,6 +35,7 @@ public class LongestSubString {
 			list.clear();                                       // 14
 			list.addLast(str.charAt(i));                        // 15
 		}
+
 //			***** Time-consuming algorithm *****
 //			int longestLength = length - i;
 //			if (longestLength <= maxList.size()) break;
@@ -63,10 +64,15 @@ public class LongestSubString {
 	}
 }
 
+
+
 /**     Tính toán độ phức tạp thời gian của phương thức findSubString
+ *
  *      - Các lệnh {1, 2, 3, 4, 5, 6, 16, 19} đều có độ phức tạp O(1)
+ *
  *      - Lệnh 17 thực hiện lặp lệnh 18 x lần, x <= n, lệnh 18 độ phức tạp O(1)
  *          ==> Độ phức tạp vòng lặp dòng {17, 18}: O(n) (case xấu nhất)
+ *
  *      - Vòng lặp dòng {7, 8, 9, 10, 11, 12, 13, 14, 15}:
  *          + Số lần lặp: n
  *          + Tổng phép tính các biểu thức điều kiện và lệnh ở {8, 9, 10, 11, 15} có độ phức tạp O(1)
