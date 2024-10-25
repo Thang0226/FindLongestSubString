@@ -73,8 +73,8 @@ public class LongestSubString {
  *          không vượt quá n --> tổng số phép tính của {13, 14} là O(n).
  *          + lệnh 12 gồm một số y bước O(1), y bằng với số bước của lệnh 13 ở một thời điểm trước đó. Vì vậy tổng y
  *          trong cả chương trình không vượt quá tổng x trong cả chương trình --> số phép tính của lệnh 12 nhỏ hơn O(n).
- *          --> Độ phức tạp của {12, 13, 14} là O(n).
- *          ==> Độ phức tạp của vòng lặp: O(n)
+ *          --> Độ phức tạp của {12, 13, 14} trong cả chương trình là O(n).
+ *          ==> Độ phức tạp của vòng lặp dòng {7, 8, 9, 10, 11, 12, 13, 14, 15}: O(n * c) + O(n) = O(n)
  *
  *       ==> Độ phức tạp của chương trình: T(n) = O(1) + O(n) + O(n) = O(n)
  *
